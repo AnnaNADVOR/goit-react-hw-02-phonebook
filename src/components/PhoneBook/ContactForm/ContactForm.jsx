@@ -21,7 +21,10 @@ class ContactForm extends Component {
     }
 
     resetForm = () => {
-        this.setState({name: "", number:"",})            
+        this.setState ({
+            name: "",
+            number: "",
+        })            
     }
 
     handleSubmitForm = event => {
@@ -31,33 +34,48 @@ class ContactForm extends Component {
     }
 
     render() {
-        const { name, number} = this.state; 
+        const { name, number } = this.state; 
+        
         return (
             <Form onSubmit={this.handleSubmitForm}> 
                 <FormField>
                     <Label htmlFor={this.nameInputId}>Name</Label>
                     <InputSection>
-                        <Input type="text" name="name" value={name} onChange={this.changeInput} placeholder="Name Surname" pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$" title="Name may contain only letters, apostrophe, dash and spaces."required />
+                        <Input
+                            type="text"
+                            name="name"
+                            value={name}
+                            onChange={this.changeInput}
+                            placeholder="Name Surname"
+                            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                            title="Name may contain only letters, apostrophe, dash and spaces."
+                            required
+                        />
                         <BsFillPersonFill />
-                    </InputSection>
-                    
+                    </InputSection>                    
                 </FormField>
                 <FormField>
                     <Label htmlFor={this.loginInputId}>Number </Label>
                     <InputSection>
-                        <Input type="tel" name="number" value={number} onChange={this.changeInput} placeholder="(xxx) xxx-xx-xx" pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}" title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +" required />
+                        <Input
+                            type="tel"
+                            name="number"
+                            value={number}
+                            onChange={this.changeInput}
+                            placeholder="(xxx) xxx-xx-xx"
+                            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+                            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                            required
+                        />
                         <BsFillTelephoneFill />
-                    </InputSection>
-                    
+                    </InputSection>                    
                 </FormField>                               
-               <SubmitButton type="submit">Add contact<BsFillPersonPlusFill /></SubmitButton>
+                <SubmitButton type="submit">Add contact
+                    <BsFillPersonPlusFill />
+                </SubmitButton>
             </Form>        
-    )
+        )
     }
-
 }
-
-
-
 
 export default ContactForm; 

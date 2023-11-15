@@ -53,11 +53,13 @@ class App extends Component {
 
   getVisibleContacts = () => {
     const { contacts, filter } = this.state;
-     return contacts.filter(contact=>contact.name.toLowerCase().includes(filter.toLowerCase()))
+    const normalizeFilter = filter.toLocaleLowerCase();
+    return contacts.filter(contact => contact.name.toLowerCase().includes(normalizeFilter));
   }
 
   render() {
     const {contacts, filter } = this.state; 
+    const visibleContacts = this.getVisibleContacts();
 
     return (
       <Container>
@@ -67,7 +69,7 @@ class App extends Component {
         {contacts.length > 0 ? (
           <>
             <Filter value={filter} onChange={this.changeFilter} />
-            <ContactList contacts={this.getVisibleContacts()} onDeleteContact={this.deleteContact}/>
+            <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact}/>
           </>
           ) :
           (<Notification message="There is no contacts"/>)
