@@ -39,7 +39,7 @@ class ContactForm extends Component {
         return (
             <Form onSubmit={this.handleSubmitForm}> 
                 <FormField>
-                    <Label htmlFor={this.nameInputId}>Name</Label>
+                    <Label>Name</Label>
                     <InputSection>
                         <Input
                             type="text"
@@ -55,7 +55,7 @@ class ContactForm extends Component {
                     </InputSection>                    
                 </FormField>
                 <FormField>
-                    <Label htmlFor={this.loginInputId}>Number </Label>
+                    <Label>Number </Label>
                     <InputSection>
                         <Input
                             type="tel"
