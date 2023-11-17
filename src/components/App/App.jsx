@@ -11,6 +11,7 @@ import {
   Container,
   MainTitle,
   SecondaryTitle,
+  Titleparth,
 } from "./App.styled";
 
 
@@ -63,7 +64,7 @@ class App extends Component {
 
     return (
       <Container>
-        <MainTitle>Phone Book</MainTitle>
+        <MainTitle>Phone<Titleparth>Book</Titleparth></MainTitle>
         <ContactForm submit={this.addContact} />
         <SecondaryTitle>Contacts</SecondaryTitle>
         {contacts.length > 0 ? (

@@ -21,3 +21,7 @@ export const SecondaryTitle = styled.h2 `
     margin-bottom: 20px; 
 
 `
+export const Titleparth = styled.span `
+    color: ${({ theme }) => theme.colors.blue};
+    text-transform: uppercase;
+`
