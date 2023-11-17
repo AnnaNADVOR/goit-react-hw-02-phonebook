@@ -25,7 +25,7 @@ export const Number = styled.span `
 
 export const RemoveButton = styled.button `
     /* text-align: center; */
-    padding: 5px;
+    padding: 8px;
     background-color: ${({ theme }) => theme.colors.blue};
     border: none;
     border-radius:50%;
